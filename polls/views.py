@@ -35,3 +35,6 @@ def vote(request, poll_id):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('poll_results', args=(p.id,)))
         #return HttpResponseRedirect(reverse('polls.views.results', args=(p.id,)))
+
+def bootstrap(request):
+    return render_to_response('index.html', {})
