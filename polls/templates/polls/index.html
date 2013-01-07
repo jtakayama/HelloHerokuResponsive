@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
+{% block extra_head_base %}
+<title>Example Poll Application</title>
+	{% block extra_head %}{% endblock %}
+{% endblock %}
+
 {% block body %}
 {% if latest_poll_list %}
     <ul>
     {% for poll in latest_poll_list %}
-        <li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
+		<div class="content-box">
+        	<li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
+		</div>
     {% endfor %}
     </ul>
 {% else %}
